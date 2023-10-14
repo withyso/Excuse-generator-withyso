@@ -8,10 +8,10 @@ import "./assets/img/4geeks.ico";
 window.onload = () => {
   //write your code here
   console.log("fish fish fish, javascript is working ");
-  document.querySelector("#the-excuse").innerHTML = randomExcuse();
+  document.querySelector("#the-excuse").innerHTML = generateRandomExcuse();
 };
 
-let randomExcuse = () => {
+let generateRandomExcuse = () => {
   let quien = ["Mi perro", "Mi abuela", "Mi gato", "Mi tortuga"];
   let accion = ["se comio", "robo", "rompio"];
   let que = ["el informe", "las llaves", "la tarea"];
@@ -28,13 +28,5 @@ let randomExcuse = () => {
   let queIndex = Math.floor(Math.random() * que.length);
   let cuandoIndex = Math.floor(Math.random() * cuando.length);
 
-  return (
-    quien[quienIndex] +
-    " " +
-    accion[accionIndex] +
-    " " +
-    que[queIndex] +
-    " " +
-    cuando[cuandoIndex]
-  );
+  return `${quien[quienIndex]} ${accion[accionIndex]} ${que[queIndex]} ${cuando[cuandoIndex]}`;
 };
